@@ -1,0 +1,7 @@
+{% if expense_sheets %}
+    {% for expense_sheet in expense_sheets %}
+        <a href="expense/{{ expense_sheet.id }}"> {{ expense_sheet.title }} total {{ expense.total }}</a>
+    {% endfor %}
+    {% else %}
+    No results found
+{% endif %}

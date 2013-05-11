@@ -1,0 +1,12 @@
+{{ expensesheet.title }}
+{{ expensesheet.total }}
+{% for expense in expenses %}
+    {{ expense.purpose }} {{ expense.amount }}
+{% endfor %}
+<button class="add_row"> Add Expense </button>
+
+<form method="post" action="{% url 'add-row' expensesheet.id %}">
+    {% csrf_token %}
+    {{ expense_row_form }}
+    <input type="submit" value="Submit Form"/>
+</form>
